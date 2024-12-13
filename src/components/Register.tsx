@@ -1,18 +1,21 @@
 import { Button, TextField } from '@mui/material'
 import React from 'react'
 import './register.css'
+import { useNavigate } from 'react-router-dom'
 // import re
 function Register() {
+  const nav=useNavigate();
   return (
     <div className='container' >
         <h1>Register</h1>
-        <TextField id="outlined-basic" data-testid="username" label="Enter Username" variant="outlined" size={"small"} />
-        <TextField id="outlined-basic" data-testid="password" label="Enter Password" variant="outlined" size={"small"} className='input' />
-        <TextField id="outlined-basic" data-testid="confirm-password" label="Confirm The Password" variant="outlined" size={"small"} />
-        <TextField id="outlined-basic" data-testid="gender" label="Enter Gender" variant="outlined" size={"small"} />
-        <TextField id="outlined-basic" data-testid="email-address" label="Enter Email Address" variant="outlined" size={"small"} />
-        <TextField id="outlined-basic" data-testid="profile-picture"  variant="standard" size={"small"}  type='file'/>
-        <Button variant="contained">Register</Button>
+        <input id="outlined-basic" data-testid="username" placeholder="Enter Username" className='input' />
+        <input id="outlined-basic" data-testid="password" placeholder="Enter Password"  className='input' />
+        <input id="outlined-basic" data-testid="confirm-password" placeholder="Confirm The Password" className='input'  />
+        <input id="outlined-basic" data-testid="gender" placeholder="Enter Gender" className='input' />
+        <input id="outlined-basic" data-testid="email-address" placeholder="Enter Email Address" className='input'  />
+        <input id="outlined-basic" data-testid="profile-picture" type='file'/>
+        <button className="contained">Register</button>
+       <span>Already have an account ? <button className='textButton' onClick={()=>nav('login')}>Login</button></span>
     </div>
 
   )
