@@ -8,7 +8,7 @@ function App() {
     <div className='mainContainer'>
       <h1>Welcome to the MyDiary</h1>
     <Routes>
-    <Route path='/' element={ <Register/> } />
+    <Route index path='/'  element={ <Register/> } />
     <Route path='/login' element={<Login/>}/>
     </Routes>
     </div>
