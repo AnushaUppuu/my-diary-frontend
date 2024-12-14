@@ -12,5 +12,5 @@ test("renders learn react link", () => {
       <App />
     </BrowserRouter>
   );
-  expect(screen.getByText("Welcome to the MyDiary")).toBeInTheDocument();
+  expect(screen.getByPlaceholderText("Enter Username")).toBeInTheDocument();
 });
