@@ -5,9 +5,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 10px;
 }
 .input {
-  width: 150px;
+  width: 200px;
   height: 30px;
   border-radius: 10px;
   border: 1px;
@@ -27,6 +28,10 @@ body {
   border: 0px;
   background: transparent;
   font-weight: bold;
+  color:green
+}
+.textButton:hover{
+  color:green;
 }
 .contained {
   padding: 10px;
@@ -36,4 +41,14 @@ body {
   border: 0;
   font-weight: bold;
   color: white;
+}
+.containerBox{
+  border: 2px solid black;
+  padding: 10px;
+  background-color:rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+h1{
+  text-align: center;
 }
