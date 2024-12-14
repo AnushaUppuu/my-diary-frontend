@@ -3,6 +3,7 @@ import Register from "./components/register/Register";
 import { Routes, Route, BrowserRouter, useNavigate } from "react-router-dom";
 import Login from "./components/login/Login";
 import "./App.css";
+import Home from "./components/Dashboard/Home";
 function App() {
   return (
     <div className="mainContainer">
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route index path="/" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/home"  element={<Home/>}/>
       </Routes>
     </div>
   );
