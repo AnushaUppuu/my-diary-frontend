@@ -1,7 +1,11 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} **/
 module.exports = {
-  testEnvironment: "node",
+  preset: 'ts-jest',
+  testEnvironment: "jsdom",
   transform: {
     "^.+.tsx?$": ["ts-jest",{}],
   },
+  moduleNameMapper:{
+    '^.+\\.(css|less)$': '<rootDir>/config/CSSStub.js'
+  }
 };
