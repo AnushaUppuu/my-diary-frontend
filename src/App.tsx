@@ -3,15 +3,14 @@ import Register from "./components/register/Register";
 import { Routes, Route, BrowserRouter, useNavigate } from "react-router-dom";
 import Login from "./components/login/Login";
 import "./App.css";
-import Home from "./components/Dashboard/Home";
+import Home from "./components/dashboard/Home";
 function App() {
   return (
     <div className="mainContainer">
-      <h1>Welcome to the MyDiary</h1>
       <Routes>
         <Route index path="/" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/home"  element={<Home/>}/>
+        <Route path="/home" element={<Home />} />
       </Routes>
     </div>
   );

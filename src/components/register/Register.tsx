@@ -27,7 +27,7 @@ function Register() {
     }
   }
   return (
-    <div className='container' >
+    <div className='containerBox' >
         <h1>Register</h1>
         <form onSubmit={handleSubmit(onSubmit)} className='container'>
         <input id="outlined-basic"  data-testid="username" placeholder="Enter Username" className='input'{...register("username", {required:"Please Enter the username",minLength:4})} />

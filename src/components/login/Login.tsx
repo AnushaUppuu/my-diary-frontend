@@ -34,7 +34,8 @@ function Login() {
       }
     };
   return (
-    <div className='container'>
+    <div className='containerBox'>
+      <h1>Login</h1>
       <form onSubmit={handleSubmit(onSubmit)} className='container'>
       <input id="outlined-basic" data-testid="username" placeholder="Enter Username"   type='text' className='input' {...register("username")}/>
       <input id="outlined-basic" data-testid="password" placeholder="Enter Password" className='input' type='password' {...register("password")} />
