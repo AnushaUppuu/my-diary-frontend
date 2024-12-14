@@ -2,7 +2,6 @@ import { Button, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {useForm} from 'react-hook-form'
-import { User } from '../../types/User'
 function Login() {
     const navigate=useNavigate();
     const [token,setToken]=useState();
