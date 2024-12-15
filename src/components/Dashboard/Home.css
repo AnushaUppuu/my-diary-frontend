@@ -20,3 +20,11 @@
   flex-direction: column;
   height: 100vh;
 }
+.dairies-Box{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
