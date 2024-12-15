@@ -9,6 +9,7 @@ import {
 import "@testing-library/jest-dom";
 import Login from "../src/components/login/Login";
 import { BrowserRouter } from "react-router-dom";
+import { AuthenticationProvider } from "../src/context/Authentication";
 global.alert=jest.fn();
 
 describe("Login", () => {
@@ -23,7 +24,9 @@ describe("Login", () => {
       <BrowserRouter
         future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
       >
+        <AuthenticationProvider>
         <Login />
+        </AuthenticationProvider>
       </BrowserRouter>
     );
     global.alert = jest.fn();

@@ -1,10 +1,10 @@
-import { Button, TextField } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {useForm} from 'react-hook-form'
+import { Authentication} from '../../context/Authentication';
 function Login() {
     const navigate=useNavigate();
-    const [token,setToken]=useState();
+    const {setToken}=useContext(Authentication)
     const {
       register,
       handleSubmit,
@@ -20,6 +20,8 @@ function Login() {
       })
      
       if(result.ok){
+        const value=await result.json();
+        setToken(value.accessToken);
         navigate('/home')
       }
       else if(result.status==300){
