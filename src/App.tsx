@@ -5,6 +5,7 @@ import Login from "./components/login/Login";
 import "./App.css";
 import Home from "./components/dashboard/Home";
 import { AuthenticationProvider } from "./context/Authentication";
+import Create from "./components/diary/Create";
 function App() {
   return (
     <div className="mainContainer">
@@ -12,7 +13,9 @@ function App() {
       <Routes>
         <Route index path="/" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/home" element={<Home />} >
+        <Route path="/home/create" element={<Create/>}/>
+        </Route>
       </Routes>
       </AuthenticationProvider>
     </div>
