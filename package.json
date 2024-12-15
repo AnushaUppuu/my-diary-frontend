@@ -51,6 +51,6 @@
     "jest-environment-jsdom": "^29.7.0",
     "regenerator-runtime": "^0.14.1",
     "ts-jest": "^29.2.5"
-  },
-  "proxy":"http://localhost:4000/"
+  }
+
 }
