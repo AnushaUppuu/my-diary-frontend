@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import "./Create.css";
+import { Authentication } from "../../context/Authentication";
+import { useNavigate } from "react-router-dom";
 function Create() {
+  const { token, username } = useContext(Authentication);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const onSubmit = async (data: any) => {
+    const sendData = {
+      title: data.title,
+      messageBody: data.messageBody,
+      username: username,
+      mood: data.radio,
+      date: data.date,
+    };
+    const result = await fetch("http://localhost:4000/users/diary", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(sendData),
+    });
+    if (result.ok) {
+      alert("Diary page created successfully");
+      navigate("/home");
+    } else {
+      alert("Try again!");
+    }
   };
   return (
     <div className="createContainer">
@@ -17,7 +41,10 @@ function Create() {
         <input
           placeholder="Enter title"
           className="input-box"
-          {...register("title")}
+          {...register("title", {
+            required: "Please Enter the title",
+            minLength: 4,
+          })}
         />
         <div className="radioDiv">
           <label>Select the type of the mood of this diary page--{">"}</label>
@@ -26,7 +53,7 @@ function Create() {
               placeholder="mood"
               value="sad"
               type="radio"
-              {...register("radio")}
+              {...register("radio", { required: "Please select any option" })}
             />
             sad
           </label>
@@ -35,7 +62,7 @@ function Create() {
               placeholder="mood"
               value="happy"
               type="radio"
-              {...register("radio")}
+              {...register("radio", { required: "Please select any option" })}
             />
             happy
           </label>
@@ -44,7 +71,7 @@ function Create() {
               placeholder="mood"
               value="exciting"
               type="radio"
-              {...register("radio")}
+              {...register("radio", { required: "Please select any option" })}
             />
             exciting
           </label>
@@ -53,7 +80,7 @@ function Create() {
               placeholder="mood"
               value="unexpected"
               type="radio"
-              {...register("radio")}
+              {...register("radio", { required: "Please select any option" })}
             />
             unexpected
           </label>
@@ -62,7 +89,7 @@ function Create() {
               placeholder="mood"
               value="other"
               type="radio"
-              {...register("radio")}
+              {...register("radio", { required: "Please select any option" })}
             />
             other
           </label>
@@ -71,12 +98,14 @@ function Create() {
           placeholder="date"
           type="date"
           className="input-box"
-          {...register("date")}
+          {...register("date", { required: "Please select any option" })}
         />
         <textarea
           placeholder="Enter the Message body"
           className="textarea"
-          {...register("messageBody")}
+          {...register("messageBody", {
+            required: "Please Enter the message body",
+          })}
         />
         <button className="create-button">Create</button>
       </form>
