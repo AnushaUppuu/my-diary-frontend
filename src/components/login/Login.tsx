@@ -4,7 +4,7 @@ import {useForm} from 'react-hook-form'
 import { Authentication} from '../../context/Authentication';
 function Login() {
     const navigate=useNavigate();
-    const {setToken}=useContext(Authentication)
+    const {setToken,setUsername}=useContext(Authentication)
     const {
       register,
       handleSubmit,
@@ -22,6 +22,7 @@ function Login() {
       if(result.ok){
         const value=await result.json();
         setToken(value.accessToken);
+        setUsername(data.username);
         navigate('/home')
       }
       else if(result.status==300){

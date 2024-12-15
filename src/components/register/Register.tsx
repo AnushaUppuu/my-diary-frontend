@@ -5,7 +5,7 @@ import {useForm} from 'react-hook-form'
 import { Authentication } from '../../context/Authentication';
 function Register() {
   const nav=useNavigate();
-  const {setToken}=useContext(Authentication)
+  const {setToken,setUsername}=useContext(Authentication)
   const{
     register,
     handleSubmit,
@@ -26,7 +26,8 @@ function Register() {
     if(result.ok){
       alert("User registered successfully");
       const token=await result.json();
-      setToken(token.accessToken)
+      setToken(token.accessToken);
+      setUsername(data.username);
       nav('/home')
     }
   }
