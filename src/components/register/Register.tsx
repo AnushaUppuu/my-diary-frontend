@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './register.css'
 import { useNavigate } from 'react-router-dom'
 import {useForm} from 'react-hook-form'
+import { Authentication } from '../../context/Authentication';
 function Register() {
   const nav=useNavigate();
+  const {setToken}=useContext(Authentication)
   const{
     register,
     handleSubmit,
@@ -23,6 +25,8 @@ function Register() {
     })
     if(result.ok){
       alert("User registered successfully");
+      const token=await result.json();
+      setToken(token.accessToken)
       nav('/home')
     }
   }

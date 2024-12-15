@@ -5,6 +5,7 @@ import Register from "../src/components/register/Register";
 import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
 import { resolve } from "path";
+import { AuthenticationProvider } from "../src/context/Authentication";
 global.alert = jest.fn();
 global.fetch = jest.fn(() =>
   Promise.resolve({
@@ -18,7 +19,9 @@ describe("Register component", () => {
       <BrowserRouter
         future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
       >
+        <AuthenticationProvider>
         <Register />
+        </AuthenticationProvider>
       </BrowserRouter>
     );
     global.alert = jest.fn();
