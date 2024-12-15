@@ -1,0 +1,14 @@
+.singleDiaryContainer{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid wheat ;
+    background-color: wheat;
+    padding: 10px;
+    border-radius: 10px;
+}
+.messageBody{
+    width: 300px;  
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
