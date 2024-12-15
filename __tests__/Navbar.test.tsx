@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
 import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
@@ -18,5 +18,11 @@ describe("Navbar component", () => {
     expect(screen.getByRole("button", { name: "Create" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Profile" })).toBeInTheDocument();
     expect(screen.getAllByRole("listitem").length).toBeLessThan(5);
+  });
+  test("should navigate to the create page upon clicking create", async () => {
+    await act(async () => {
+      fireEvent.click(screen.getByRole("button", { name: "Create" }));
+    });
+    expect(window.location.pathname).toBe("/create");
   });
 });
