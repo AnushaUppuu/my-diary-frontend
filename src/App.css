@@ -1,6 +1,5 @@
 .mainContainer {
-  /* background-image: url("https://img.freepik.com/free-photo/empty-white-notepad-flowers-flat-lay_23-2148408343.jpg?semt=ais_hybrid"); */
-  background-image: url('https://images.squarespace-cdn.com/content/v1/5e18f199837d8053a9382a3f/1587850915565-R5P2OG4SCJ54KHL0BCQ2/Canva+-+Photo+Of+Person+Writing+On+White+Paper.jpg');
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5e18f199837d8053a9382a3f/1587850915565-R5P2OG4SCJ54KHL0BCQ2/Canva+-+Photo+Of+Person+Writing+On+White+Paper.jpg");
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -8,6 +7,4 @@
   background-size: cover;
   justify-content: center;
   align-items: center;
-  background-color: orangered;
-
 }
