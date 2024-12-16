@@ -3,20 +3,22 @@ import Register from "./components/register/Register";
 import { Routes, Route, BrowserRouter, useNavigate } from "react-router-dom";
 import Login from "./components/login/Login";
 import "./App.css";
-import Home from "./components/dashboard/Home";
+import Dashboard from "./components/dashboard/Dashboard";
 import { AuthenticationProvider } from "./context/Authentication";
 import Create from "./components/diary/Create";
+import Home from "./components/dashboard/Home";
 function App() {
   return (
     <div className="mainContainer">
       <AuthenticationProvider>
-      <Routes>
-        <Route index path="/" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/home" element={<Home />} >
-        <Route path="/home/create" element={<Create/>}/>
-        </Route>
-      </Routes>
+        <Routes>
+          <Route index path="/" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Dashboard/>}>
+            <Route path="/home/" element={<Home/>}/>
+            <Route path="/home/create" element={<Create />} />
+          </Route>
+        </Routes>
       </AuthenticationProvider>
     </div>
   );
