@@ -11,7 +11,7 @@ function Navbar() {
           <img src={logo} className="image" />
         </li>
         <li>
-          <button>Home</button>
+          <button onClick={()=>navigate('')}>Home</button>
         </li>
         <li>
           <button onClick={() => navigate("create")}>Create</button>
