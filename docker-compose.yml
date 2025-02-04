@@ -1,0 +1,7 @@
+services:
+  my-diary-frontend:
+    build: .
+    ports: 
+      - "3002:3000"
+    image: anusha1473/my-diary-frontend
+  
