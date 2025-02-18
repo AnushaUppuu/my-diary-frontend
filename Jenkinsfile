@@ -30,6 +30,11 @@ pipeline {
                sh 'npm test'
             }
         }
+          stage('Build') {
+            steps {
+               sh 'npm run build'
+            }
+        }
         stage('Push to Docker Hub') {         
            steps{                            
 	         sh ' docker login -u anusha1473 -p Xing@1473' 
