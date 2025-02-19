@@ -1,13 +1,13 @@
 import { act, fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import Dashboard from "../src/components/dashboard/Dashboard";
+import Dashboard from "../src/components/Dashboard/Dashboard";
 import React from "react";
 import "@testing-library/jest-dom";
 import {
   Authentication,
   AuthenticationProvider,
 } from "../src/context/Authentication";
-import Home from "../src/components/dashboard/Home";
+import Home from "../src/components/Dashboard/Home";
 global.fetch = jest.fn(() =>
     Promise.resolve({
       ok: true,

@@ -1,6 +1,6 @@
 import { act, fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import Dashboard from "../src/components/dashboard/Dashboard";
+import Dashboard from "../src/components/Dashboard/Dashboard";
 import React from "react";
 import "@testing-library/jest-dom";
 import {
