@@ -35,15 +35,6 @@ pipeline {
                sh 'CI=false npm run build'
             }
         }
-        stage('Push to Docker Hub') {         
-           steps{                            
-	         sh ' docker login -u anusha1473 -p Xing@1473' 
-             echo 'Login Completed '  
-             sh 'docker push anusha1473/my-diary-frontend'                
-	        echo 'Push completed'            
-           }           
-        }
-       
        
     }
 }    
